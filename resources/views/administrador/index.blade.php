@@ -1,32 +1,29 @@
 @extends('layouts.app')
-<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css" rel="stylesheet" type="text/css">
+<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css" rel="stylesheet" type="text/css"></link>
     @section('content')
     <div class="row">
-        <div class="col-md-10 offset-1 datatable">
+        <div class="col-md-10 offset-1 datatable shadow">
             <br>
             </br>
-            <button class="btn btn-success aimar_btn" type="">
-                Bebidas
-            </button>
-            <button class="btn aimar_btn">
-                ir a
-            </button>
-            <a class="btn btn-danger aimar_btn" href="{{ url('platos') }}">
-                Platos
-            </a>
+
+                    <button type="submit" class="btn btn-primary shadow" data-toggle="modal" data-target=".bd-example-modal-lg">Nuevo Producto</button>
+      
             <br>
                 <br>
-                    <table id="productos">
+                    <table id="productos" class="shadow">
                         <thead>
                             <tr class="bg-info">
                                 <th>
-                                    Bebida
+                                    codigo
                                 </th>
                                 <th>
-                                    estado
+                                    descripcion
                                 </th>
                                 <th>
-                                    Precio
+                                    valor Unitario
+                                </th>
+                                <th>
+                                    IVA
                                 </th>
                                 <th>
                                     Acciones
@@ -34,32 +31,38 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($bebidas as $bebida)
+                            @foreach ($productos as $producto)
                             <tr>
                                 <td>
-                                    {{ $bebida->nombre }}
+                                    {{ $producto->codigo }}
                                 </td>
                                 <td>
-                                    {{ $bebida->estado }}
+                                    {{ $producto->descripcion }}
                                 </td>
                                 <td>
-                                    {{ $bebida->precio }}
+                                    {{ $producto->valor_unitario }}
                                 </td>
                                 <td>
-                                    <a class="btn btn-info text-white" onclick="cambiar({{ $bebida->id }})" type="button">
+                                    {{ $producto->IVA }}
+                                </td>
+                                <td>
+                                    {{-- botones aca --}}
+                                </td>
+                               {{--  <td>
+                                    <a class="btn btn-info text-white" onclick="cambiar({{ $producto->id }})" type="button">
                                         <i class="fas fa-toggle-off fa-1x">
                                         </i>
-                                        {{-- {{ $producto->estado?'inactiva':'activar' }} --}}
+                                        {{-- {{ $producto->estado?'inactiva':'activar' }} 
                                     </a>
-                                    <a class="btn btn-success" data-toggle="modal" href="#editar{{ $bebida->id }}" type="button">
+                                    <a class="btn btn-success" data-toggle="modal" href="#editar{{ $producto->id }}" type="button">
                                         <i class="fas fa-edit">
                                         </i>
                                     </a>
-                                    <a class="btn btn-danger" data-toggle="modal" href="#eliminar{{$bebida->id}}" type="button">
+                                    <a class="btn btn-danger" data-toggle="modal" href="#eliminar{{$producto->id}}" type="button">
                                         <i class="fas fa-trash-alt text-white">
                                         </i>
                                     </a>
-                                </td>
+                                </td> --}}
                             </tr>
                             @endforeach
                         </tbody>
@@ -68,21 +71,23 @@
             </br>
         </div>
     </div>
+@include('modal.ModalCrearProducto')
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>
     <script charset="utf-8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js" type="text/javascript">
     </script>
     <script>
-        function cambiar($id){
-            var url='bebidas/cambiar/'+$id;
-            $.ajax({
-                url: url,
-                type: 'get',
-                success: function(response){
-                    console.log(response);
-                }
-            });
-        }
+        // function cambiar($id){
+        //     var url='bebidas/cambiar/'+$id;
+        //     $.ajax({
+        //         url: url,
+        //         type: 'get',
+        //         success: function(response){
+        //             console.log(response);
+        //         }
+        //     });
+        // }
         $('#productos').dataTable({
         "processing":true,
         "lengthMenu": [[10,25,50,-1],[10,25,50,"ALL"]],
@@ -91,13 +96,13 @@
                     },
     });
     </script>
-    @include('modals.modal_eliminar1')
-    @include('modals.modal_editar1')
+    {{-- @include('modals.modal_eliminar1')
+    @include('modals.modal_editar1') --}}
     <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.min.js">
     </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js">
     </script>
-    <script type="text/javascript">
+   {{--  <script type="text/javascript">
         @if ($creado=='1')
                 // Display an info toast with no title
                  toastr.success('la bebida se agrego correctamente','Creada',{
@@ -114,6 +119,5 @@
                  });
                 
             @endif
-    </script>
+    </script> --}}
     @endsection
-</link>

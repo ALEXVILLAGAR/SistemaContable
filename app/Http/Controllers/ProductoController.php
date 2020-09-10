@@ -14,7 +14,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::get();
+        return view('administrador.index',['productos'=>$productos]);
     }
 
     /**
@@ -35,7 +36,17 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          $data = $request->all();
+        // dd($data);
+        Producto::create([
+        'codigo' => $data['codigo'],
+        'descripcion' => $data['descripcion'],
+        'valor_unitario' => $data['valor_unitario'],
+        'IVA' => $data['IVA'],
+        ]);
+        
+       $productos = Producto::get();
+        return view('administrador.index',['productos'=>$productos]);
     }
 
     /**
