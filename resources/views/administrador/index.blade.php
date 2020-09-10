@@ -6,7 +6,7 @@
             <br>
             </br>
 
-                    <button type="submit" class="btn btn-primary shadow" data-toggle="modal" data-target=".bd-example-modal-lg">Nuevo Producto</button>
+                    <button type="button" class="btn btn-primary shadow" data-toggle="modal" data-target=".bd-example-modal-lg">Nuevo Producto</button>
       
             <br>
                 <br>
@@ -46,7 +46,9 @@
                                     {{ $producto->IVA }}
                                 </td>
                                 <td>
-                                    {{-- botones aca --}}
+                                    <button type="submit" class="btn btn-info shadow" data-toggle="modal" data-target=".EditarProductos-modal-lg" title="Editar Producto"><i class="fas fa-edit"></i></button>
+
+                                    <button type="submit" class="btn btn-danger shadow" data-toggle="modal" data-target=".EditarProductos-modal-lg" title="eliminar Producto"><i class="fas fa-trash-alt" class="text-danger"></i></button>
                                 </td>
                                {{--  <td>
                                     <a class="btn btn-info text-white" onclick="cambiar({{ $producto->id }})" type="button">
@@ -72,6 +74,7 @@
         </div>
     </div>
 @include('modal.ModalCrearProducto')
+@include('modal.ModalEditarProducto')
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>
