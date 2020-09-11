@@ -34,7 +34,7 @@
                             @foreach ($productos as $producto)
                             <tr>
                                 <td>
-                                    {{ $producto->codigo }}
+                                    {{ $producto->codigo }} 
                                 </td>
                                 <td>
                                     {{ $producto->descripcion }}
@@ -46,7 +46,7 @@
                                     {{ $producto->IVA }}
                                 </td>
                                 <td>
-                                    <button type="submit" class="btn btn-info shadow" data-toggle="modal" data-target=".EditarProductos-modal-lg" title="Editar Producto"><i class="fas fa-edit"></i></button>
+                                    <a type="submit" class="btn btn-info shadow" data-toggle="modal" href="#EditarProductos-modal-lg{{$producto->id}}" title="Editar Producto"><i class="fas fa-edit"></i></a>
 
                                     <button type="submit" class="btn btn-danger shadow" data-toggle="modal" data-target=".EditarProductos-modal-lg" title="eliminar Producto"><i class="fas fa-trash-alt" class="text-danger"></i></button>
                                 </td>
@@ -73,8 +73,7 @@
             </br>
         </div>
     </div>
-@include('modal.ModalCrearProducto')
-@include('modal.ModalEditarProducto')
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>
@@ -99,13 +98,15 @@
                     },
     });
     </script>
+    @include('modal.ModalCrearProducto')
+    @include('modal.ModalEditarProducto')
     {{-- @include('modals.modal_eliminar1')
     @include('modals.modal_editar1') --}}
     <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.min.js">
     </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js">
     </script>
-   {{--  <script type="text/javascript">
+    <script type="text/javascript">
         @if ($creado=='1')
                 // Display an info toast with no title
                  toastr.success('la bebida se agrego correctamente','Creada',{
@@ -116,11 +117,11 @@
             @endif
             @if ($creado=='2')
                 // Display an info toast with no title
-                 toastr.success('la bebida se edito correctamente','Actualizada',{
+                 toastr.success('EL producto a sifo editado','Actualizada',{
                      "progressBar": 'true',
                      "positionClass": "toast-bottom-right",
                  });
                 
             @endif
-    </script> --}}
+    </script>
     @endsection

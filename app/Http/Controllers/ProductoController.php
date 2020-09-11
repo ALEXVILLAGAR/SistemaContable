@@ -14,8 +14,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
+        $creado  = '0';
         $productos = Producto::get();
-        return view('administrador.index',['productos'=>$productos]);
+        return view('administrador.index',['productos'=>$productos,'creado'=>$creado]);
     }
 
     /**
@@ -36,6 +37,7 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
+       
           $data = $request->all();
         // dd($data);
         Producto::create([
@@ -44,7 +46,7 @@ class ProductoController extends Controller
         'valor_unitario' => $data['valor_unitario'],
         'IVA' => $data['IVA'],
         ]);
-        
+        $data = null;
        $productos = Producto::get();
         return view('administrador.index',['productos'=>$productos]);
     }
@@ -80,7 +82,11 @@ class ProductoController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
-        //
+      $producto->update($request->only(['codigo','descripcion','valor_unitario','IVA']));
+        $producto->save();
+        $productos = Producto::get();
+        $creado  = '2';
+        return view('administrador.index', compact('productos', 'creado'));
     }
 
     /**
