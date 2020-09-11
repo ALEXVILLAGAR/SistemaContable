@@ -48,10 +48,10 @@
                                 <td>
                                     <button type="submit" class="btn btn-info shadow" data-toggle="modal" data-target=".EditarProductos-modal-lg" title="Editar Producto"><i class="fas fa-edit"></i></button>
 
-                                    <button type="submit" class="btn btn-danger shadow" data-toggle="modal" data-target=".EditarProductos-modal-lg" title="eliminar Producto"><i class="fas fa-trash-alt" class="text-danger"></i></button>
+                                    <button type="submit" class="btn btn-danger shadow" data-toggle="modal" data-target=".EliminarProducto-modal-lg" title="Eliminar Producto"><i class="fas fa-trash-alt" class="text-danger"></i></button>
                                 </td>
                                {{--  <td>
-                                    <a class="btn btn-info text-white" onclick="cambiar({{ $producto->id }})" type="button">
+                                    <a class="btn btn-info text-white" onclick="cambiar({{ $producto->id })" type="button">
                                         <i class="fas fa-toggle-off fa-1x">
                                         </i>
                                         {{-- {{ $producto->estado?'inactiva':'activar' }} 
@@ -75,6 +75,7 @@
     </div>
 @include('modal.ModalCrearProducto')
 @include('modal.ModalEditarProducto')
+@include('modal.ModalEliminarProducto')
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>
