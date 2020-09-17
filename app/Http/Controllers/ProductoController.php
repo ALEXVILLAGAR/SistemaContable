@@ -48,7 +48,8 @@ class ProductoController extends Controller
         ]);
         $data = null;
        $productos = Producto::get();
-        return view('administrador.index',['productos'=>$productos]);
+       $creado  = '0';
+        return view('administrador.index',['productos'=>$productos,'creado'=>$creado]);
     }
 
     /**
