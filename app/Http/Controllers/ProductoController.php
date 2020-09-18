@@ -47,8 +47,9 @@ class ProductoController extends Controller
         'IVA' => $data['IVA'],
         ]);
         $data = null;
+        $creado  = '2';
        $productos = Producto::get();
-        return view('administrador.index',['productos'=>$productos]);
+        return back();
     }
 
     /**
@@ -86,7 +87,7 @@ class ProductoController extends Controller
         $producto->save();
         $productos = Producto::get();
         $creado  = '2';
-        return view('administrador.index', compact('productos', 'creado'));
+        return back();
     }
 
     /**
