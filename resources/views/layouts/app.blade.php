@@ -77,7 +77,7 @@
                                     <a class="nav-link" href="{{ route('productos.index') }}">{{ __('productos') }}</a>
                                 </li>
                              <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('ventas.index') }}">{{ __('ventas') }}</a>
+                                    <a class="nav-link" href="{{ route('ventas.index') }}">{{ __('Nueva Venta') }}</a>
                                 </li>
                         @endguest
                     </ul>

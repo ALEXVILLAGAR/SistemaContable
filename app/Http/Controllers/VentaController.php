@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Venta;
+use App\{Venta,Producto};
 use Illuminate\Http\Request;
 
 class VentaController extends Controller
@@ -14,7 +14,8 @@ class VentaController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Producto::get();
+        return view('vendedor.index',['productos'=>$productos]);
     }
 
     /**

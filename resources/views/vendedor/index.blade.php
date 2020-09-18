@@ -2,7 +2,43 @@
 <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css" rel="stylesheet" type="text/css"></link>
     @section('content')
     <div class="row">
+        <div class="col-md-10 offset-1 text-center">
+            <h2>Nuevas ventas</h3>
+                <hr>
+        </div>
+ </div>
+        <div class="row">
+            
+        
+            <div class="col-md-10 offset-1 mt-1 text-center shadow">
+                <h3>Agregar producto a la factura</h3>
+                <hr class="text-info">
+                <input type="text" name="" class="form-control col-md-4 mt-3 shadow" placeholder="codigo Producto">
+
+                <br>
+
+                <div>
+                    <button class="btn btn-success shadow">Buscar</button>
+                    <button class="btn btn-info shadow">Agregar</button>                    
+                </div>
+                <br>
+            </div>
+              </div>   
+              <br>
+              <div class="row">
+                <div class="col-md-10 offset-1 text-center">
+                <h2>Productos cargados en la factura</h3>
+                <hr>
+        </div>
+                  
+              </div>  
+              <div class="row">
         <div class="col-md-10 offset-1 datatable shadow">
+            <br>
+            </br>                    
+                    
+            <br>
+                <br>
                     <table id="productos" class="shadow">
                         <thead>
                             <tr class="bg-info">
@@ -64,8 +100,10 @@
                     </table>
                 </br>
             </br>
+        </div> 
         </div>
-    </div>
+      
+   
 @include('modal.ModalCrearProducto')
 @include('modal.ModalEditarProducto')
 @include('modal.ModalEliminarProducto')
@@ -101,22 +139,5 @@
     </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js">
     </script>
-    <script type="text/javascript">
-        @if ($creado=='1')
-                // Display an info toast with no title
-                 toastr.success('la bebida se agrego correctamente','Creada',{
-                    "progressBar": 'true',
-                    "positionClass": "toast-bottom-right",
-                 });
-                  
-            @endif
-            @if ($creado=='2')
-                // Display an info toast with no title
-                 toastr.success('EL producto a sifo editado','Actualizada',{
-                     "progressBar": 'true',
-                     "positionClass": "toast-bottom-right",
-                 });
-                
-            @endif
-    </script>
+  
     @endsection
