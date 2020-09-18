@@ -49,7 +49,9 @@ class ProductoController extends Controller
         $data = null;
         $creado  = '2';
        $productos = Producto::get();
+
         return back();
+
     }
 
     /**

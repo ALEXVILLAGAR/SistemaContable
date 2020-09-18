@@ -76,6 +76,9 @@
                              <li class="nav-item">
                                     <a class="nav-link" href="{{ route('productos.index') }}">{{ __('productos') }}</a>
                                 </li>
+                             <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('ventas.index') }}">{{ __('ventas') }}</a>
+                                </li>
                         @endguest
                     </ul>
                 </div>

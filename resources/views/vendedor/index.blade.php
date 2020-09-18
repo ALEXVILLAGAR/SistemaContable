@@ -3,13 +3,6 @@
     @section('content')
     <div class="row">
         <div class="col-md-10 offset-1 datatable shadow">
-            <br>
-            </br>
-
-                    <button type="button" class="btn btn-primary shadow" data-toggle="modal" data-target=".bd-example-modal-lg">Nuevo Producto</button>
-                    
-            <br>
-                <br>
                     <table id="productos" class="shadow">
                         <thead>
                             <tr class="bg-info">
