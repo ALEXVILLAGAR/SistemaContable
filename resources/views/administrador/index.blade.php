@@ -48,7 +48,7 @@
                                 <td>
                                     <a type="submit" class="btn btn-info shadow" data-toggle="modal" href="#EditarProductos-modal-lg{{$producto->id}}" title="Editar Producto"><i class="fas fa-edit"></i></a>
 
-                                    <button type="submit" class="btn btn-danger shadow" data-toggle="modal" data-target=".EliminarProducto-modal-lg" title="Eliminar Producto"><i class="fas fa-trash-alt" class="text-danger"></i></button>
+                                    <a type="submit" class="btn btn-danger shadow" data-toggle="modal" href="#EliminarProducto-modal-lg{{$producto->id}}" title="Eliminar Producto"><i class="fas fa-trash-alt" class="text-danger"></i></a>
                                 </td>
                                {{--  <td>
                                     <a class="btn btn-info text-white" onclick="cambiar({{ $producto->id })" type="button">

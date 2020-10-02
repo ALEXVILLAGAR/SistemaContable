@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-4 mt-2" required>
              <label for="" class="col-md-4"><strong>IVA</strong></label>             
-             <input type="number" class="form-control shadow" placeholder="Iva" name="iva" class="col-md-11 ml-4">
+             <input type="number" class="form-control shadow" placeholder="IVA" name="IVA" class="col-md-11 ml-4">
           </div> 
           <div class="col-md-12 mt-2">
              <label for="" class="col-md-4"><strong>Descripción</strong></label>

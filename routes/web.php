@@ -20,3 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('productos','ProductoController');
 Route::resource('ventas','VentaController');
+Route::post('productos/{producto}', 'ProductoController@Eliminar')->name('Eliminar');

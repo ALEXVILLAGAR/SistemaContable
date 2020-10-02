@@ -94,12 +94,37 @@ class ProductoController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     * 
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
     public function destroy(Producto $producto)
     {
-        //
+        // 
+    }
+
+    public function Eliminar(Request $request,Producto $producto)
+    {
+        $codigo = $request->only(['codigo']);  
+        $dato = Producto::where('codigo', '=', $codigo)->get();
+         // dd($dato[0]->id);
+        if (count($dato) > 0)
+        {
+            foreach ($dato as $x) {
+                 // dd($x->codigo);
+                if ($x->codigo == $codigo['codigo'])
+        {
+           $note = Producto::find($x->id);
+        
+           $note->delete();
+            // $dato->delete();
+
+        }
+            }
+            
+            
+        }
+       
+        return back();
     }
 }
