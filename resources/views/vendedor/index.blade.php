@@ -13,7 +13,21 @@
             <div class="col-md-10 offset-1 mt-1 text-center shadow">
                 <h3>Agregar producto a la factura</h3>
                 <hr class="text-info">
-                <input type="text" name="" class="form-control col-md-4 mt-3 shadow" placeholder="codigo Producto">
+                    
+                <div class="row">
+        <div class="col">
+          <input type="text" name="" class="form-control col-md-12  mt-3 shadow" placeholder="Codigo Producto">
+        </div>
+        <div class="col">
+           <input type="text" name="" class="form-control col-md-12  mt-3 shadow" placeholder="Valor">
+        </div>
+        <div class="col">
+           <input type="text" name="" class="form-control col-md-12  mt-3 shadow" placeholder="Iva">
+        </div>
+        <div class="col">
+           <input type="text" name="" class="form-control col-md-12  mt-3 shadow" placeholder="Descripcion">
+        </div>
+      </div>
 
                 <br>
 
@@ -77,8 +91,8 @@
                                 <td>
                                     <a type="submit" class="btn btn-info shadow" data-toggle="modal" href="#EditarProductos-modal-lg{{$producto->id}}" title="Editar Producto"><i class="fas fa-edit"></i></a>
 
-                                    <button type="submit" class="btn btn-danger shadow" data-toggle="modal" data-target=".EliminarProducto-modal-lg" title="Eliminar Producto"><i class="fas fa-trash-alt" class="text-danger"></i></button>
-                                </td>
+                                     <button type="submit" class="btn btn-danger shadow" data-toggle="modal" data-target=".EliminarProducto-modal-lg" title="Eliminar Producto"><i class="fas fa-trash-alt" class="text-danger"></i></button>
+                                </td> 
                                {{--  <td>
                                     <a class="btn btn-info text-white" onclick="cambiar({{ $producto->id })" type="button">
                                         <i class="fas fa-toggle-off fa-1x">
@@ -88,11 +102,11 @@
                                     <a class="btn btn-success" data-toggle="modal" href="#editar{{ $producto->id }}" type="button">
                                         <i class="fas fa-edit">
                                         </i>
-                                    </a>
+                                    </a><!-- 
                                     <a class="btn btn-danger" data-toggle="modal" href="#eliminar{{$producto->id}}" type="button">
                                         <i class="fas fa-trash-alt text-white">
                                         </i>
-                                    </a>
+                                    </a> -->
                                 </td> --}}
                             </tr>
                             @endforeach
@@ -104,9 +118,9 @@
         </div>
       
    
-@include('modal.ModalCrearProducto')
+<!-- @include('modal.ModalCrearProducto')
 @include('modal.ModalEditarProducto')
-@include('modal.ModalEliminarProducto')
+@include('modal.ModalEliminarProducto') -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>

@@ -16,6 +16,7 @@ class ProductoController extends Controller
     {
         $creado  = '0';
         $productos = Producto::get();
+        // dd($productos);
         return view('administrador.index',['productos'=>$productos,'creado'=>$creado]);
     }
 
@@ -44,7 +45,7 @@ class ProductoController extends Controller
         'codigo' => $data['codigo'],
         'descripcion' => $data['descripcion'],
         'valor_unitario' => $data['valor_unitario'],
-        'IVA' => $data['IVA'],
+        'IVAt' => $data['IVA'],
         ]);
         $data = null;
         $creado  = '2';
@@ -107,21 +108,17 @@ class ProductoController extends Controller
     {
         $codigo = $request->only(['codigo']);  
         $dato = Producto::where('codigo', '=', $codigo)->get();
-         // dd($dato[0]->id);
+
         if (count($dato) > 0)
         {
             foreach ($dato as $x) {
-                 // dd($x->codigo);
                 if ($x->codigo == $codigo['codigo'])
         {
            $note = Producto::find($x->id);
         
            $note->delete();
-            // $dato->delete();
-
         }
             }
-            
             
         }
        
