@@ -20,3 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('productos','ProductoController');
 Route::resource('ventas','VentaController');
+Route::resource('verventas','VentaPivotController');
+
+

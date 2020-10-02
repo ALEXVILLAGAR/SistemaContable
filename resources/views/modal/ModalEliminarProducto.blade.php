@@ -1,7 +1,7 @@
-<div class="modal fade EliminarProducto-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true>
 	  <div class="modal-dialog modal-lg">
 	    <div class="modal-content">
-	      <form action="{{ route('productos.store') }}" method="post" accept-charset="utf-8" class="col-md-12">
+	      <form action="" method="DELETE" accept-charset="utf-8" class="col-md-12">
 	         @csrf
 	          <div class="card-header text-center">
 	            <h4>Elminar Producto</h4>
