@@ -45,7 +45,7 @@ class ProductoController extends Controller
         'codigo' => $data['codigo'],
         'descripcion' => $data['descripcion'],
         'valor_unitario' => $data['valor_unitario'],
-        'IVAt' => $data['IVA'],
+        'IVA' => $data['IVA'],
         ]);
         $data = null;
         $creado  = '2';
