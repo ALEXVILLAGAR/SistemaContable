@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVentasTable extends Migration
+class CreateVentaPivotsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateVentasTable extends Migration
      */
     public function up()
     {
-        Schema::create('ventas', function (Blueprint $table) {
+        Schema::create('venta_pivots', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date();
-            $total->decimal();
+            $table->string('codigo');
+            $table->string('descripcion');
+            $table->decimal('valor_unitario', 8, 2);
+            $table->decimal('IVA', 8, 2);
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateVentasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ventas');
+        Schema::dropIfExists('venta_pivots');
     }
 }

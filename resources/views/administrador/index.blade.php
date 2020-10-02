@@ -48,23 +48,9 @@
                                 <td>
                                     <a type="submit" class="btn btn-info shadow" data-toggle="modal" href="#EditarProductos-modal-lg{{$producto->id}}" title="Editar Producto"><i class="fas fa-edit"></i></a>
 
-                                    <button type="submit" class="btn btn-danger shadow" data-toggle="modal" data-target=".EliminarProducto-modal-lg" title="Eliminar Producto"><i class="fas fa-trash-alt" class="text-danger"></i></button>
+                                    <!--<a type="submit" class="btn btn-danger shadow" data-toggle="modal" href="#EliminarProducto-modal-lg{{$producto->id}}" title="Eliminar Producto"><i class="fas fa-trash-alt" class="text-danger"></i></a>-->
                                 </td>
-                               {{--  <td>
-                                    <a class="btn btn-info text-white" onclick="cambiar({{ $producto->id })" type="button">
-                                        <i class="fas fa-toggle-off fa-1x">
-                                        </i>
-                                        {{-- {{ $producto->estado?'inactiva':'activar' }} 
-                                    </a>
-                                    <a class="btn btn-success" data-toggle="modal" href="#editar{{ $producto->id }}" type="button">
-                                        <i class="fas fa-edit">
-                                        </i>
-                                    </a>
-                                    <a class="btn btn-danger" data-toggle="modal" href="#eliminar{{$producto->id}}" type="button">
-                                        <i class="fas fa-trash-alt text-white">
-                                        </i>
-                                    </a>
-                                </td> --}}
+                            
                             </tr>
                             @endforeach
                         </tbody>
@@ -75,7 +61,7 @@
     </div>
 @include('modal.ModalCrearProducto')
 @include('modal.ModalEditarProducto')
-@include('modal.ModalEliminarProducto')
+<!--@include('modal.ModalEliminarProducto')-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>
@@ -100,10 +86,7 @@
                     },
     });
     </script>
-    @include('modal.ModalCrearProducto')
-    @include('modal.ModalEditarProducto')
-    {{-- @include('modals.modal_eliminar1')
-    @include('modals.modal_editar1') --}}
+   
     <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.min.js">
     </script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js">

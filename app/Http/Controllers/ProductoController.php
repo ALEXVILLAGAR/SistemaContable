@@ -16,6 +16,7 @@ class ProductoController extends Controller
     {
         $creado  = '0';
         $productos = Producto::get();
+        // dd($productos);
         return view('administrador.index',['productos'=>$productos,'creado'=>$creado]);
     }
 
@@ -44,7 +45,7 @@ class ProductoController extends Controller
         'codigo' => $data['codigo'],
         'descripcion' => $data['descripcion'],
         'valor_unitario' => $data['valor_unitario'],
-        'IVA' => $data['IVA'],
+        'IVAt' => $data['IVA'],
         ]);
         $data = null;
         $creado  = '2';
@@ -100,6 +101,18 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
-        //
+          // $validar = $request->only(['codigo']);
+          // $producto = Producto::where('codigo', '=', $validar)->get();
+          // $id = $producto->id;
+          // dd($validar);
+          // if($producto->codigo == $validar){
+          //   dd($producto);
+              // $note = Producto::find($id);
+        
+              // $note->delete();
+          // }
+
+          // return back();
+
     }
 }
